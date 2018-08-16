@@ -1,8 +1,47 @@
-
-.box(@size){
-	padding: @size;
+.generate-padding(@type, @size) when (@size >0) {
+    .pad-@{size}@{type} {
+        padding:~"@{size}@{type}";
+    }
+    .generate-padding(@type, @size - 1);
 }
 
-.box-1 {
-	.box(1rem);
+.generate-margin(@type, @size) when (@size >0) {
+    .mar-@{size}@{type} {
+        margin:~"@{size}@{type}";
+    }
+    .generate-margin(@type, @size - 1);
 }
+
+.generate-box(@type, @size) when (@size >0) {
+    .box-@{size}@{type} {
+        width:~"@{size}@{type}";
+        height:~"@{size}@{type}";
+    }
+    .generate-box(@type, @size - 1);
+}
+
+.generate-icon-box(@type, @size) when (@size >0) {
+    @doubleSize: @size * 2;
+    .icon-@{size}@{type} {
+        width:~"@{doubleSize}@{type}";
+        height:~"@{doubleSize}@{type}";
+        font-size:~"@{size}@{type}";
+        margin: 0;
+        padding: 0;
+    }
+    .generate-icon-box(@type, @size - 1);
+}
+
+.round {
+    border-radius: 50%;
+    &:before {
+        border-radius: 50%;
+    }
+}
+
+.generate-padding(~"px", 40);
+.generate-padding(~"rem", 10);
+.generate-margin(~"px", 40);
+.generate-margin(~"rem", 10);
+.generate-box(~"px", 50);
+.generate-icon-box(~"px", 40);

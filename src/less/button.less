@@ -17,6 +17,7 @@ button {
     user-select: none;
     position: relative;
     border: none;
+    background-color: transparent;
 }
 
 button.icon {
@@ -49,12 +50,20 @@ button:before {
     left: 0;
 }
 
+button:focus:before {
+    background-color: rgba(100, 100, 100, 0.08);
+}
+
 button:hover:before {
-    background-color: rgba(100, 100, 100, 0.125);
+    background-color: rgba(100, 100, 100, 0.15);
+}
+
+button.inverted:focus:before {
+    background-color: rgba(255, 255, 255, 0.125);
 }
 
 button.inverted:hover:before {
-    background-color: rgba(255, 255, 255, 0.125);
+    background-color: rgba(255, 255, 255, 0.30);
 }
 
 button:active,

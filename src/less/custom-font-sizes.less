@@ -1,0 +1,38 @@
+.font-size(@size) {
+    font-size: @size;
+}
+
+// .generate-font-sizes(@type, @size) when (@size >0) {
+//     .fs-@{size}@{type} {
+//         font-size:~"@{size}@{type}" !important;
+//     }
+//     .generate-font-sizes(@type, @size - 1);
+// }
+// .generate-font-sizes(~"px", 40);
+.fs-xxl {
+    .font-size(24px);
+}
+
+.fs-xl {
+    .font-size(20px);
+}
+
+.fs-l {
+    .font-size(18px);
+}
+
+.fs-n {
+    .font-size(16px);
+}
+
+.fs-m {
+    .font-size(14px);
+}
+
+.fs-s {
+    .font-size(12px);
+}
+
+.fs-xs {
+    .font-size(10px);
+}
